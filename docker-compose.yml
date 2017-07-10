@@ -1,0 +1,24 @@
+version: '2'
+
+networks:
+  web:
+    driver: "bridge"
+
+services:
+  proxy:
+    image: "traefik"
+    command: "--logLevel=INFO"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./cert/:/cert/"
+      - "./config/:/etc/traefik/:ro"
+    labels:
+      - "traefik.enable=false" # set to true to expose Monitoring & API
+      - "traefik.backend=proxy"
+      - "traefik.port=8080"
+      - "traefik.frontend.rule=Host: status.klink.asia"
+    networks:
+      - "web"
