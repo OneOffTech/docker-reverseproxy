@@ -19,6 +19,5 @@ services:
       - "traefik.enable=false" # set to true to expose Monitoring & API
       - "traefik.backend=proxy"
       - "traefik.port=8080"
-      - "traefik.frontend.rule=Host: status.klink.asia"
     networks:
       - "web"

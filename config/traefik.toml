@@ -4,7 +4,7 @@ InsecureSkipVerify = true
 defaultEntryPoints = ["http", "https"]
 
 [acme]
-email = "hostmaster@klink.asia"
+email = "root@oneofftech.xyz"
 storage = "cert/acme.json"
 entryPoint = "https"
 onDemand = false
@@ -24,7 +24,7 @@ address = ":8080"
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "klink.asia"
+domain = "docker.local"
 watch = true
 exposedbydefault = false
 
