@@ -4,7 +4,7 @@ provides TLS termination so the service does not have to deal with
 certificates.
 
 ### Running the reverse proxy
-edit the configuration file `confic/traefik.toml` and deploy the proxy
+edit the configuration file `config/traefik.toml` and deploy the proxy
 by running
 
 ```bash
