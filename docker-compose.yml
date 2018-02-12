@@ -6,8 +6,8 @@ networks:
 
 services:
   proxy:
-    image: "traefik"
-    command: "--logLevel=INFO"
+    image: "traefik:1.5"
+    command: "--logLevel=ERROR"
     ports:
       - "80:80"
       - "443:443"
