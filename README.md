@@ -33,7 +33,7 @@ services:
     labels:
       - "traefik.enable=true" # "false" to stop exporting the container
       - "traefik.backend=backend" # arbitrary name, must be unique
-      - "traefik.frontend.rule=Host: backend.klink.asia" # designated domain
+      - "traefik.frontend.rule=Host: backend.EXAMPLE-DOMAIN.TLD" # designated domain
       - "traefik.port=80" # port inside the container, that will be exported
     networks:
       - web
