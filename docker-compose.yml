@@ -6,15 +6,15 @@ networks:
 
 services:
   proxy:
-    image: "traefik:1.5"
+    build: .
     command: "--logLevel=ERROR"
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./data/:/cert/"
-      - "./conf/:/etc/traefik/:ro"
+      - "./data/reverseproxy/cert:/cert/"
+      - "./conf/reverseproxy:/etc/traefik/:ro"
     labels:
       - "traefik.enable=false" # set to true to expose Monitoring & API
       - "traefik.backend=proxy"
